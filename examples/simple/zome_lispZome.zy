@@ -1,3 +1,6 @@
+(expose "getProperty" STRING)
+(defn getProperty [x] (property x))
+
 (expose "addEven" STRING)
 (defn addEven [x]
   (putmeta (property "_id") (commit "evens" x) "evens"))
