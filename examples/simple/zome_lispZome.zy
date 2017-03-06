@@ -1,14 +1,29 @@
 (expose "addEven" STRING)
-(defn addEven [x] (commit "evens" x))
-(expose listEvens [] (getmeta (property "_id") "even"))
+(defn addEven [x]
+  (commit "evens" x)
+  (putmeta (property "_id") x "evens"))
+(expose "listEvens" STRING)
+(defn listEvens [] (getmeta (property "_id") "evens"))
+
 (expose "addPrime" STRING)
-(defn addPrime [x] (commit "primes" x))
-(expose listPrimes [] (getmeta (property "_id") "primes"))
+(defn addPrime [x]
+  (commit "primes" x)
+  (putmeta (property "_id") x "primes"))
+(expose "listPrimes" STRING)
+(defn listPrimes [] (getmeta (property "_id") "primes"))
+
+(expose "addProfile" JSON)
+(defn addProfile [x]
+  (commit "profiles" x)
+  (putmeta (property "_id") x "profiles"))
+(expose "listProfiles" JSON)
+(defn listPrimes [] g (getmeta (property "_id") "primes"))
+
 
 (defn validate [entryType entry props]
   (cond (== entryType "evens")  (cond (== (mod entry 2) 0) true false)
         (== entryType "primes")  (isprime (hget entry %prime))
         (== entryType "profiles") true
-        false)
-)
-(defn init [] true)
+        false))
+
+(defn genesis [] true)

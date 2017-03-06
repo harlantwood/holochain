@@ -23,25 +23,26 @@ HashType = "sha2-256"
         DataFormat = "js"
         Schema = ""
         [Zomes.jsZome.Entries.myOdds.SchemaHash]
-  [Zomes.myZome]
-    Name = "myZome"
+  [Zomes.lispZome]
+    Name = "lispZome"
     Description = "this is a zygomas test zome"
-    Code = "zome_myZome.zy"
+    Code = "zome_lispZome.zy"
     NucleusType = "zygo"
-    [Zomes.myZome.CodeHash]
-    [Zomes.myZome.Entries]
-      [Zomes.myZome.Entries.myData]
-        Name = "myData"
+    [Zomes.lispZome.CodeHash]
+    [Zomes.lispZome.Entries]
+      [Zomes.lispZome.Entries.even]
+        Name = "even"
         DataFormat = "zygo"
         Schema = ""
-        [Zomes.myZome.Entries.myData.SchemaHash]
-      [Zomes.myZome.Entries.primes]
-        Name = "primes"
-        DataFormat = "JSON"
+        [Zomes.lispZome.Entries.even.SchemaHash]
+      [Zomes.lispZome.Entries.prime]
+        Name = "prime"
+        DataFormat = "zygo"
         Schema = ""
-        [Zomes.myZome.Entries.primes.SchemaHash]
-      [Zomes.myZome.Entries.profile]
+         [Zomes.lispZome.Entries.prime.SchemaHash]
+      [Zomes.lispZome.Entries.profile]
         Name = "profile"
         DataFormat = "JSON"
         Schema = "schema_profile.json"
-        [Zomes.myZome.Entries.profile.SchemaHash]
+        [Zomes.lispZome.Entries.profile.SchemaHash]
+

@@ -1,1 +1,18 @@
-[{"Zome":"myZome","FnName":"addData","Input":"2","Output":"%h%","Err":""}]
+[
+    {"Zome":"lispZome","FnName":"addEven","Input":"2","Output":"%h%","Err":""},
+    
+    {"Zome":"lispZome","FnName":"addEven","Input":"4","Output":"%h%","Err":""},
+    
+    {"Zome":"lispZome","FnName":"addEven","Input":"5","Output":"","Err":"Error calling 'commit': Invalid entry: 5"},
+    
+    {"Zome":"lispZome","FnName":"addPrime","Input":"{\"prime\":7}","Output":"\"%h%\"","Err":""},
+    
+    {"Zome":"lispZome","FnName":"addPrime","Input":"{\"prime\":4}","Output":"","Err":"Error calling 'commit': Invalid entry: {\"Atype\":\"hash\", \"prime\":4, \"zKeyOrder\":[\"prime\"]}"},
+    {"Zome":"jsZome","FnName":"addProfile","Input":"{\"firstName\":\"Art\",\"lastName\":\"Brock\"}","Output":"\"%h%\"","Err":""},
+    
+    {"Zome":"jsZome","FnName":"getProperty","Input":"_id","Output":"%id%","Err":""},
+    
+    {"Zome":"jsZome","FnName":"addEven","Input":"7","Output":"%h%","Err":""},
+    
+    {"Zome":"jsZome","FnName":"addEven","Input":"2","Output":"","Err":"Invalid entry: 2"}
+]
