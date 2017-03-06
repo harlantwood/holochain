@@ -4,19 +4,17 @@
 (expose "addEven" STRING)
 (defn addEven [x]
   (putmeta (property "_id") (commit "evens" x) "evens"))
-(expose "listEvens" STRING)
+
 (defn listEvens [] (getmeta (property "_id") "evens"))
 
 (expose "addPrime" STRING)
 (defn addPrime [x]
-
   (putmeta (property "_id") (commit "primes" x) "primes"))
 (expose "listPrimes" STRING)
 (defn listPrimes [] (getmeta (property "_id") "primes"))
 
 (expose "addProfile" JSON)
 (defn addProfile [x]
-  (commit "profiles" x)
   (putmeta (property "_id") (commit "profiles" x) "profiles"))
 (expose "listProfiles" JSON)
 (defn listPrimes [] g (getmeta (property "_id") "primes"))
