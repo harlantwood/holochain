@@ -1,6 +1,5 @@
 (expose "addEven" STRING)
 (defn addEven [x]
-  (println (property "_id"))
   (putmeta (property "_id") (commit "evens" x) "evens"))
 (expose "listEvens" STRING)
 (defn listEvens [] (getmeta (property "_id") "evens"))
