@@ -1,32 +1,32 @@
 <html>
     <head>
         <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js">
-    
-            function capitalize(word) {
-                return word.charAt(0).toUpperCase() + word.slice(1);
-            }
+         
+         function capitalize(word) {
+             return word.charAt(0).toUpperCase() + word.slice(1);
+         }
 
-            function displayResponse(response) {
-                $("#error").html(response.responseText);
-                $("#result").html("");
-            }
+         function displayResponse(response) {
+             $("#error").html(response.responseText);
+             $("#result").html("");
+         }
+         function loadChain(type) {
+             $.post("/fn/lispZome/list" + capitalize(type),
+                    function(response) {
+                        $('#' + type + "list").html(response.responseText);
+                    }).error(displayResponse);
+         }
+         function loadChains() {
+             var types = ['even', 'prime', 'profile'];
 
-            function loadChains() {
-                var types = ['even', 'prime', 'profile'];
+             types.forEach(loadChain)
+         }
 
-                types.forEach(function(type) {
-                    $.post("/fn/lispZome/list" + capitalize(type),
-                        function(response) {
-                            $('#' + type + "list").html(response.responseText);
-                        }).error(displayResponse);
-                });
-            }
+         function send(arg) {
+             $.post("/fn/lispZome/add" + capitalize(arg), $("#" + arg).val(), displayResponse).error(displayResponse);
+         };
 
-            function send(arg) {
-                $.post("/fn/lispZome/add" + capitalize(arg), $("#" + arg).val(), displayResponse).error(displayResponse);
-            };
-
-            window.onload = loadChains;
+         window.onload = loadChains;
         </script>
     </head>
     <h1>A Simple Holochain Demo</h1>
@@ -43,7 +43,7 @@
         <input type="text" id="profile">
         <button onclick="send(\"profile\");">Send</button>
         <div id="profilelist"></div>
-    <div id="result"></div>
-    <div id="error"></div>
-  </body>
+        <div id="result"></div>
+        <div id="error"></div>
+    </body>
 </html>
