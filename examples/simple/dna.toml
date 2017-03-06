@@ -30,19 +30,19 @@ HashType = "sha2-256"
     NucleusType = "zygo"
     [Zomes.lispZome.CodeHash]
     [Zomes.lispZome.Entries]
-      [Zomes.lispZome.Entries.even]
-        Name = "even"
+      [Zomes.lispZome.Entries.evens]
+        Name = "evens"
         DataFormat = "zygo"
         Schema = ""
-        [Zomes.lispZome.Entries.even.SchemaHash]
-      [Zomes.lispZome.Entries.prime]
-        Name = "prime"
+        [Zomes.lispZome.Entries.evens.SchemaHash]
+      [Zomes.lispZome.Entries.primes]
+        Name = "primes"
         DataFormat = "zygo"
         Schema = ""
-         [Zomes.lispZome.Entries.prime.SchemaHash]
-      [Zomes.lispZome.Entries.profile]
-        Name = "profile"
+         [Zomes.lispZome.Entries.primes.SchemaHash]
+      [Zomes.lispZome.Entries.profiles]
+        Name = "profiles"
         DataFormat = "JSON"
         Schema = "schema_profile.json"
-        [Zomes.lispZome.Entries.profile.SchemaHash]
+        [Zomes.lispZome.Entries.profiles.SchemaHash]
 
