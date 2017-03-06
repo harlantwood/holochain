@@ -1,7 +1,7 @@
 <html>
     <head>
-        <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js">
-         
+        <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+        <script type="text/javascript">
          function capitalize(word) {
              return word.charAt(0).toUpperCase() + word.slice(1);
          }
@@ -13,11 +13,11 @@
          function loadChain(type) {
              $.post("/fn/lispZome/list" + capitalize(type),
                     function(response) {
-                        $('#' + type + "list").html(response.responseText);
-                    }).error(displayResponse);
+                        $('#' + type + 'list').html(response.responseText);
+                    }).error(response.displayResponse);
          }
          function loadChains() {
-             var types = ['even', 'prime', 'profile'];
+             var types = ['evens', 'primes', 'profiles'];
 
              types.forEach(loadChain)
          }
