@@ -3,13 +3,13 @@
 
 (expose "addEven" STRING)
 (defn addEven [x]
-  (putmeta (property "_id") (commit "evens" x) "evens")
+  (putmeta (property "_id") (commit "evens" x) "evens"))
 (expose "listEvens" JSON)
 (defn listEvens [x] (getmeta (property "_id") "evens"))
 
 (expose "addPrime" STRING)
 (defn addPrime [x]
- (putmeta (property "_id") (commit "primes" x) "primes")))
+ (putmeta (property "_id") (commit "primes" x) "primes"))
 (expose "listPrimes" JSON)
 (defn listPrimes [x] (getmeta (property "_id") "primes"))
 
