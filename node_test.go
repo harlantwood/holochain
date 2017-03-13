@@ -21,7 +21,7 @@ func TestNewNode(t *testing.T) {
 	defer node.Close()
 	Convey("It should create a node", t, func() {
 		So(err, ShouldBeNil)
-		So(node.NetAddr.String(), ShouldEqual, "/ip4/127.0.0.1/tcp/1234")
+		So(node.NetAddr.String(), ShouldEqual, "/ip4/0.0.0.0/tcp/1234")
 		So(node.HashAddr.Pretty(), ShouldEqual, "QmNN6oDiV4GsfKDXPVmGLdBLLXCM28Jnm7pz7WD63aiwSG")
 	})
 
@@ -227,7 +227,7 @@ func TestFindPeer(t *testing.T) {
 */
 
 func makeNode(port int, id string) (*Node, error) {
-	listenaddr := fmt.Sprintf("/ip4/127.0.0.1/tcp/%d", port)
+	listenaddr := fmt.Sprintf("/ip4/0.0.0.0/tcp/%d", port)
 	// use a constant reader so the key will be the same each time for the test...
 	r := strings.NewReader(id + "1234567890123456789012345678901234567890")
 	key, _, err := ic.GenerateEd25519Key(r)

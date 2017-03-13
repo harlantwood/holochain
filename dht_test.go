@@ -136,7 +136,7 @@ func TestSend(t *testing.T) {
 	d, _, h := prepareTestChain("test")
 	defer cleanupTestDir(d)
 
-	node, err := NewNode("/ip4/127.0.0.1/tcp/1234", h.id, h.Agent().PrivKey())
+	node, err := NewNode("/ip4/0.0.0.0/tcp/1234", h.id, h.Agent().PrivKey())
 	if err != nil {
 		panic(err)
 	}
